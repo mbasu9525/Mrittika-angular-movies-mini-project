@@ -1,0 +1,50 @@
+<div class="details-body">
+    <div class="back-action">
+        <button class="back-btn" (click)="goBack()">
+            <img src="../../../../assets/icons/homeIcon.png" class="home-img">
+            Back
+        </button>
+    </div>
+    <ng-container *ngIf="loadingState != 'error'; else noData">
+        <div class="top-details-info">
+            <h2 class="title"> {{ movieDetailsData.title }} </h2>
+            <div class="img-summary-sec">
+                <div class="img-part">
+                    <img [src]="movieDetailsData.poster" alt="Movie Poster" class="poster-image">
+                </div>
+                <div class="summary-part">
+                    <span class="summary-tag">Summary: </span> {{movieDetailsData.summary}}
+                </div>
+            </div>
+        </div>
+        <div class="bottom-details">
+            <div class="details-header">Details</div>
+            <div class="details-table">
+                <div class="row">
+                    <div class="left-col">Box Office</div>
+                    <div class="right-col">{{ movieDetailsData.box_office | currencyFormat }}</div>
+                </div>
+                <div class="row">
+                    <div class="left-col">Budget</div>
+                    <div class="right-col">{{movieDetailsData.budget | currencyFormat}}</div>
+                </div>
+                <div class="row">
+                    <div class="left-col">Duration</div>
+                    <div class="right-col">{{movieDetailsData.duration | duration}}</div>
+                </div>
+                <div class="row">
+                    <div class="left-col">Producers</div>
+                    <div class="right-col">{{getNamesData(movieDetailsData.producers)}}</div>
+                </div>
+                <div class="row last-row">
+                    <div class="left-col">Cinematographers</div>
+                    <div class="right-col">{{getNamesData(movieDetailsData.cinematographers)}}</div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #noData>
+        <h2> No details found</h2>
+    </ng-template>
+</div>

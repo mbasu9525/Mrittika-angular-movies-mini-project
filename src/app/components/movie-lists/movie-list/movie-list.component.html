@@ -1,0 +1,20 @@
+<div class="filterSection">
+    <form [formGroup]="filterForm">
+
+        <h4>Filters</h4>
+
+        <label for="title">Title</label>
+        <input id="title" type="text" formControlName="title" class="input-field">
+      
+        <label for="release-year">Release year</label>
+        <input id="release-year" type="number" formControlName="releaseYear" class="input-field">
+      
+    </form>
+</div>
+
+<ul class="movie-list-body" *ngIf="filteredMoviesResponse?.length">
+    <li *ngFor="let movie of filteredMoviesResponse">
+        <app-movie-list-item [movie] = "movie" (detailsBtnClick)="navigateToDetailsPage($event)"></app-movie-list-item>
+    </li>
+</ul>
+

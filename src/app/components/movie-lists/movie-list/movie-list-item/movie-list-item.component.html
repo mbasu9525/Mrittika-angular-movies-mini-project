@@ -1,0 +1,19 @@
+<div class="movie-item">
+    <div class="movie-info">
+        <div class="title"> {{ movie.title }} </div>
+        <div class="other-info">
+            <div class="release info-item">
+                Release date: {{ movie.release_date}}
+            </div>
+            <div class="budget info-item">
+                Budget: {{ movie.budget | currencyFormat }}
+            </div>
+            <div class="duration info-item">
+                Duration: {{ movie.duration | duration }}
+            </div>
+        </div>
+    </div>
+    <div class="action">
+        <button [id]="movie.id" (click)="detailsButtonClicked(movie.id)" class="details-button"> Details </button>
+    </div>
+</div>

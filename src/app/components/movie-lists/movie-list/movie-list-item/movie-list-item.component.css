@@ -1,0 +1,32 @@
+.movie-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.title{
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.other-info{
+    display: flex;
+}
+
+.info-item{
+    margin-right: 30px;
+    font-size: 14px;
+}
+
+.details-button{
+    background-color: #aaaaaa;
+    color: black;
+}
